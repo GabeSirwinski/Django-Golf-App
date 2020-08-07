@@ -1,0 +1,49 @@
+{% extends 'GolfApp/baseGolfApp.html' %}
+
+{% block content %}
+<div class="tournament-wrapper">
+
+<div class="card mx-auto my-5 border border-white bg-dark text-white text-center" style="width: 30rem;">
+  <div class="card-header pt-4">
+    <h4>Tournament:<span class="text-success"> {{tournament_details.tournament_name}}</span></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-dark text-white"><h5>Location: {{tournament_details.city}}, {{tournament_details.country}}</h5></li>
+      <li class="list-group-item bg-dark text-white"><h5>Date: {{tournament_details.date}}</h5></li>
+      <li class="list-group-item bg-dark text-white"><h5>Par: {{tournament_details.par}}</h5></li>
+      <li class="list-group-item bg-dark text-white"><h5><a href="/GolfApp/Players/{{tournament_details.winner.id}}/Details" class="text-white">Tournament Winner: {{tournament_details.winner}}</a></h5></li>
+  </ul>
+    <div class="card-footer pb-4">
+        <a href="{% url 'tournament_index' %}" class="btn btn-secondary" role="button">Back to List</a>
+        <a role="button" href="/GolfApp/{{tournament_details.id}}/Tournament/Edit" class="btn btn-primary">Edit</a>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+  Delete
+</button>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Are you sure you want to delete {{tournament_details.tournament_name}}?</h5> <br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a role="button" href="/GolfApp/{{tournament_details.id}}/Tournament/deleteConfirmed" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

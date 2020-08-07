@@ -1,0 +1,58 @@
+{% extends 'GolfApp/baseGolfApp.html' %}
+
+{% block content %}
+<div class="player-wrapper">
+<div class="navbar-background pb-3 mb-5">
+  <div class="container">
+    <h1 class="display-4 text-white text-center">{{year}} Season</h1>
+  </div>
+</div>
+<div class="bg-dark w-50 mx-auto py-2 px-2">
+<input id="myInput" class="input-group text-center" type="text" placeholder="Search For Player">
+</div>
+<br><br>
+
+<table class="table table-dark border border-white text-white w-50 mx-auto table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+      <th>Total Events</th>
+      <th>Average Points</th>
+    <th>Total Points</th>
+      <th>World Rank</th>
+  </tr>
+  </thead>
+    <tbody id="myTable">
+    {% for i in content %}
+  <tr class="table-row show-on-scroll" data-href="Player/{{i.PlayerID}}">
+    <td>{{i.Name}}</td>
+      <td>{{i.Events}}</td>
+      <td>{{i.AveragePoints}}</td>
+      <td>{{i.TotalPoints}}</td>
+      <td>{{i.WorldGolfRank}}</td>
+
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+$(document).ready(function($) {
+    $(".table-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
+});
+</script>
+{% endblock %}

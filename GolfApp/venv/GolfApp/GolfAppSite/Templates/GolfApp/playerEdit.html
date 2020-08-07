@@ -1,0 +1,38 @@
+{% extends 'GolfApp/baseGolfApp.html' %}
+
+{% block title %} - Edit Player {% endblock %}
+
+{% block content %}
+<div class="user-player-wrapper">
+
+<div class="col-lg-6 col-md-10 col-sm-12 mx-auto border border-white bg-dark text-white m-5">
+        <h4 class="text-bold text-center mt-3">Edit Player</h4>
+        <p class="text-center mb-3">Give us the updated details about the player</p>
+<form method="post">
+    {% csrf_token %}
+    <table class="table">
+  <tr>
+    <td class="text-right">Player Name: </td>
+    <td>{{ form.player_name}}</td>
+  </tr>
+  <tr>
+    <td class="text-right">Average Score: </td>
+    <td>{{ form.average_score}}</td>
+  </tr>
+  <tr>
+    <td class="text-right">Driving Distance: </td>
+    <td>{{form.driving_distance}}</td>
+  </tr>
+   <tr>
+    <td class="text-right">Tournament Wins: </td>
+    <td>{{form.wins}}</td>
+   </tr>
+</table>
+        <div class="text-center m-1 border-top">
+            <button type="submit" id="enterPlayer" class="btn my-5 btn-success text-right ml-4">Submit</button>
+            <a role="button" id="backHome" href="/GolfApp/Players" class="btn my-5 btn-secondary text-right ml-4">Back To List</a>
+        </div>
+</form>
+</div>
+</div>
+{% endblock %}

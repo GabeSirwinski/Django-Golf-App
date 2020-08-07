@@ -1,0 +1,28 @@
+{% extends 'GolfApp/baseGolfApp.html' %}
+{% block title %} - News {% endblock %}
+{% block content %}
+<div class="news-wrapper">
+<div class="navbar-background pb-3 mb-5">
+  <div class="container">
+    <h1 class="display-4 text-white text-center">News</h1>
+  </div>
+</div>
+<div class="row justify-content-center">
+    {% for i in content %}
+     <div class="card my-3 mx-3 bg-dark text-white text-center" style="width: 30rem;">
+        <img class="card-img-top" src="{{i.img}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{i.title}}</h5>
+        <p class="card-text flex">{{i.p}}</p>
+
+      </div>
+         <div class="card-footer">
+         <a target="_blank" href="https://www.pgatour.com{{i.url}}" class="btn btn-primary text-center">View Article</a>
+         </div>
+    </div>
+    {% if forloop.counter|divisibleby:"2" and not forloop.last %}
+        </div><div class="row justify-content-center">
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

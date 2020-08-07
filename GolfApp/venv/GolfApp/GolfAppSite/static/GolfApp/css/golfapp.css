@@ -1,0 +1,225 @@
+/* navbar styling */
+
+.navbar-background {
+    background-color: darkgreen;
+}
+
+.slider-background {
+    background-color: rgba(11,11,11,0.8);
+}
+
+#main_navbar {
+    transition: 0.4s;
+}
+
+html {height: 100%;}
+body {min-height: 100%;}
+
+a.nav-link {
+    color: white;
+    font-size: 1.5rem !important;
+    font-weight: 600;
+}
+a.nav-link:hover {
+    color: white;
+    font-weight: 600;
+	-webkit-text-stroke: 1.5px black;
+}
+
+.table-nonfluid {
+   width: auto !important;
+}
+
+/* homepage full cover */
+.slide_image_1 {
+   background: url("../images/slide_image_1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 95vh;
+}
+
+.slide_image_2 {
+   background: url("../images/slide_image_2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 95vh;
+}
+
+.slide_image_3 {
+   background: url("../images/slide_image_3.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 95vh;
+}
+
+.user-player-wrapper {
+   background: url("../images/user-player-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 90vh;
+}
+
+.news-wrapper {
+   background: url("../images/news-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 90vh;
+}
+
+
+.course-wrapper {
+   background: url("../images/courses-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 90vh;
+}
+
+
+
+.tournament-wrapper {
+   background: url("../images/tournament-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 90vh;
+}
+
+.player-wrapper {
+   background: url("../images/pga-player-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 90vh;
+}
+
+
+.site-wrapper {
+   background: url("../images/golfapphome.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 95vh;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+
+.inner {
+  padding: 30px;
+}
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+
+}
+
+
+
+
+
+
+
+.show-on-scroll {
+  opacity: 0;
+  animation: none;
+  will-change: animation, opacity;
+}
+
+.show-on-scroll.is-visible {
+  animation: comeUp .6s linear forwards, fadeIn .6s linear forwards;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;
+  }
+  to {opacity: 1;
+  }
+}
+
+@keyframes comeUp {
+  from {transform: translateY(50%)
+  }
+  to {transform: translateY(0%)}
+}
+
+
+
+
+
+
+
+
+
+
+/* fade in effect */
+
+#fade-in {
+    opacity: 0;
+    animation: none;
+    will-change: animation, opacity, display;
+}
+
+#fade-in.show {
+    animation: fadeIn .5s linear forwards;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {transform: translateY(30%); opacity:0;}
+    to {transform: translateY(0%); opacity: 1;}}
+}
+
+
+/* NAVBAR SUBMENU */
+
+

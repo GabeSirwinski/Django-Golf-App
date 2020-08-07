@@ -1,0 +1,79 @@
+{% extends 'GolfApp/baseGolfApp.html' %}
+
+{% block content %}
+<div class="course-wrapper">
+<div class="navbar-background pb-3 mb-4">
+  <div class="container">
+    <h1 class="display-4 text-white text-center">Search Golf Courses</h1>
+  </div>
+</div>
+
+{% if contents == None and weather == None %}
+<div class="mx-auto text-center p-5">
+  <form method="post" class="form-inline justify-content-center">
+      {% csrf_token %}
+    <input class="form-control mr-3 col-6" name="zip_code" type="search" placeholder="Enter ZIP code" aria-label="Search">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</div>
+{% if errors %}
+
+<h4 class="text-white text-center"> {{ errors }} </h4><br>
+
+{% endif %}
+{% else %}
+    <div class="mx-auto text-center">
+    <button id="weather_button" class="btn btn-primary btn-lg justify-content-center">See Weather for {{zip_code}}</button>
+    </div>
+    <div id="weather_div" class="row justify-content-center d-none">
+
+     <div class="card mx-3 text-center text-bold bg-secondary border border-white text-white" style="width: 30rem;">
+        <div class="card-header border border-white bg-dark">
+
+            <button id="weather_hide" class="btn btn-primary btn-sm float-right"><strong>X</strong></button>
+            <h5>Weather for {{zip_code}}</h5>
+        </div>
+      <div class="card-body">
+        <p>24-hour high: {{temp}}&#8457;</p>
+          <p>Description: <span class="text-uppercase">{{skies}}</span></p>
+          </div>
+          <div class="card-footer border border-white bg-dark"><h5 class="text-white">GolfApp says: <span class="{{approval.color}}">{{approval.text}}</span></h5>
+    </div>
+    </div>
+    </div>
+<div class="row justify-content-center">
+    {% for c in contents.items %}
+     <div class="card my-3 mx-3 text-center bg-dark text-white show-on-scroll" style="width: 30rem;">
+        <div class="card-header">
+            <h5>{{ c.title }}</h5>
+        </div>
+      <div class="card-body">
+        <p>{{c.address.label}}</p>
+        <a target="_blank" href="https://www.google.com/maps/search/{{c.address.label}}" class="btn btn-success text-center">View in Maps</a>
+      </div>
+    </div>
+    {% if forloop.counter|divisibleby:"2" and not forloop.last %}
+        </div><div class="row justify-content-center">
+    {% endif %}
+    {% endfor %}
+
+
+{% endif %}
+
+</div>
+{% endblock %}
+    {% block js %}
+
+    <script>
+        $('#weather_button').click(function() {
+            $('#weather_div').removeClass('d-none');
+            $('#weather_button').addClass('d-none');
+        });
+        $('#weather_hide').click(function() {
+            $('#weather_div').addClass('d-none');
+            $('#weather_button').removeClass('d-none');
+        });
+
+    </script>
+
+    {% endblock %}
