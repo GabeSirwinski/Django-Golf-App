@@ -20,7 +20,7 @@ Click the video below to see a tour. Note that there are other parts of the site
 
 
 
-[![Watch the video](http://img.youtube.com/vi/P3HJZol05A8/hqdefault.jpg)](https://www.youtube.com/P3HJZol05A8) 
+[![Watch the video](http://img.youtube.com/vi/P3HJZol05A8/hqdefault.jpg)](https://www.youtube.com/watch?v=P3HJZol05A8) 
 
 
 
