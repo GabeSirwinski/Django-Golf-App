@@ -1,4 +1,4 @@
-# Django_Golf_App
+# Django Golf App
 
 This site was done as a solo project for my Python Live Project as part of the Tech Academy curriculum. 
 
